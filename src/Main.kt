@@ -23,7 +23,7 @@
  * Constant vales used to define some key values
  * which can then be used throughout the code...
  */
-const val NUMCAGES = 8      // The total number of cages
+const val NUMCAGES = 8     // The total number of cages
 const val EMPTY = "---"     // Represents an empty cage
 
 
@@ -245,28 +245,17 @@ fun emptyCount(cageList: List<String>): Int {
  */
 fun showMonkeyCages(cageList: List<String>) {
     var textLength: Int = cageList.max().toString().length + 3
-
-    print("+")
-    println(("${"-".repeat(textLength)}+".padEnd(textLength, ' ')).repeat(cageList.size))
-    print("|")
+    println("+" + ("${"-".repeat(textLength-1)}+".padEnd(textLength, ' ')).repeat(cageList.size))
     for ((i) in cageList.withIndex()) {
-        print(" Cage ${i+1}".padEnd(textLength, ' '))
-        print("|")
+        print("| Cage ${i+1}".padEnd(textLength, ' '))
     }
-
-    println()
-    print("+")
-    println(("${"-".repeat(textLength)}+".padEnd(textLength, ' ')).repeat(cageList.size))
-    print("|")
-
+    print("|\n")
+    println("+" + ("${"-".repeat(textLength-1)}+".padEnd(textLength, ' ')).repeat(cageList.size))
     for ((_,monkey) in cageList.withIndex()) {
-        print(" $monkey".padEnd(textLength, ' '))
-        print("|")
+        print("| $monkey".padEnd(textLength, ' '))
     }
-    println()
-    print("+")
-    println(("${"-".repeat(textLength)}+".padEnd(textLength, ' ')).repeat(cageList.size))
-    // REPLACE THIS WITH YOUR CODE!
+    print("|\n")
+    println("+" + ("${"-".repeat(textLength-1)}+".padEnd(textLength, ' ')).repeat(cageList.size))
 }
 
 
